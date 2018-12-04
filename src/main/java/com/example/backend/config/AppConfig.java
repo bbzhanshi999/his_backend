@@ -62,6 +62,10 @@ public class AppConfig implements WebFluxConfigurer {
     }
 
 
+    /**
+     * 配置加密算法
+     * @return
+     */
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder(){
         return new BCryptPasswordEncoder();

@@ -16,4 +16,5 @@ public class DrugInfo {
     private String unit;
     private Integer num;
     private Double amount;
+    private Double selfPaying;
 }

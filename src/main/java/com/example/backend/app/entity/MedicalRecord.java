@@ -1,6 +1,5 @@
 package com.example.backend.app.entity;
 
-import com.example.backend.sys.secure.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
