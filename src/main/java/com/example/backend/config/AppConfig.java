@@ -40,6 +40,12 @@ public class AppConfig implements WebFluxConfigurer {
                 .allowedHeaders("token")
                 .exposedHeaders("token")
                 .allowCredentials(true).maxAge(3600);
+        /*小程序跨域*/
+        registry.addMapping("/wx/**")
+                .allowedOrigins("*")
+                .allowedHeaders("token")
+                .exposedHeaders("token")
+                .allowCredentials(true).maxAge(3600);
 
     }
 
@@ -82,6 +88,7 @@ public class AppConfig implements WebFluxConfigurer {
                 .authorizeExchange()
                 .pathMatchers("/api/signIn").authenticated()
                 .pathMatchers("/api/signUp").permitAll()
+                .pathMatchers("/wx/**").permitAll()
                 .and()
                 .addFilterAt(loginFilter(), SecurityWebFiltersOrder.HTTP_BASIC)
                 .authorizeExchange()
